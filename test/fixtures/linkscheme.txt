@@ -1,6 +1,0 @@
-Links that have a scheme and should not be altered
-.
-[link](http://example.com)
-.
-<p><a href="http://example.com">link</a></p>
-.

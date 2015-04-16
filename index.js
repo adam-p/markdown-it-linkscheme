@@ -7,16 +7,19 @@
 /*jshint node:true*/
 
 
-module.exports = function linkscheme_plugin(md, opts) {
+var hasSchemeRegex = /^[^\s]+:\/.+/;
+
+module.exports = function linkscheme_plugin(md, scheme) {
   var oldLinkOpenOverride = md.renderer.rules.link_open;
 
-  opts = opts || {};
+  scheme = scheme || 'http://';
 
   md.renderer.rules.link_open = function(tokens, idx, options, env, self) {
     var hrefIndex = tokens[idx].attrIndex('href');
 
-    if (hrefIndex >= 0) {
-      //tokens[idx].attrs[hrefIndex][1] = 'http://' + tokens[idx].attrs[hrefIndex][1];
+    if (hrefIndex >= 0 &&
+        !hasSchemeRegex.test(tokens[idx].attrs[hrefIndex][1])) {
+      tokens[idx].attrs[hrefIndex][1] = scheme + tokens[idx].attrs[hrefIndex][1];
     }
 
     if (oldLinkOpenOverride) {

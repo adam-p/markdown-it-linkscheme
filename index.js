@@ -7,7 +7,7 @@
 /*jshint node:true*/
 
 
-var hasSchemeRegex = /^[^\s]+:\/.+/;
+var hasSchemeRegex = /^([^\s]+:\/|#).+/;
 
 module.exports = function linkscheme_plugin(md, scheme) {
   var oldLinkOpenOverride = md.renderer.rules.link_open;

@@ -72,4 +72,17 @@ describe('markdown-it-linkscheme', function () {
     target = '<p><a href="https://link">name</a></p>\n';
     expect(md.render(s)).to.equal(target);
   });
+
+  it('should not add scheme to anchors (hash links)', function() {
+    var md = require('markdown-it')().use(require('../'));
+    var s, target;
+
+    s = '[name](#hash)';
+    target = '<p><a href="#hash">name</a></p>\n';
+    expect(md.render(s)).to.equal(target);
+
+    s = '[name](#example.com)';
+    target = '<p><a href="#example.com">name</a></p>\n';
+    expect(md.render(s)).to.equal(target);
+  });
 });

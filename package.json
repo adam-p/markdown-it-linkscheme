@@ -1,6 +1,6 @@
 {
   "name": "markdown-it-linkscheme",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "markdown-it plugin to add a scheme (i.e., `http://`) to link URIs that lack one.",
   "keywords": [
     "markdown-it-plugin",

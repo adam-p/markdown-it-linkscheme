@@ -1,0 +1,36 @@
+{
+  "name": "markdown-it-linkscheme",
+  "version": "1.0.0",
+  "description": "markdown-it plugin to add a scheme (i.e., `http://`) to link URIs that lack one.",
+  "keywords": [
+    "markdown-it-plugin",
+    "markdown-it",
+    "markdown",
+    "link",
+    "scheme",
+    "protocol"
+  ],
+  "homepage": "https://github.com/adam-p/markdown-it-linkscheme",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/adam-p/markdown-it-linkscheme.git"
+  },
+  "bugs": {
+    "url": "https://github.com/adam-p/markdown-it-linkscheme/issues"
+  },
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "test": "make test"
+  },
+  "devDependencies": {
+    "browserify": "*",
+    "coveralls": "^2.11.2",
+    "eslint": "0.10.2",
+    "eslint-plugin-nodeca": "^1.0.0",
+    "istanbul": "*",
+    "markdown-it": "^4.0.0",
+    "markdown-it-testgen": "~0.1.0",
+    "mocha": "*"
+  }
+}

@@ -7,7 +7,13 @@
 /*jshint node:true*/
 
 
-var hasSchemeRegex = /^([^\s]+:\/|#).+/;
+// From http://en.wikipedia.org/wiki/URI_scheme
+// The scheme name consists of a sequence of characters beginning with a letter
+// and followed by any combination of letters, digits, plus ("+"), period ("."),
+// or hyphen ("-"). Although schemes are case-insensitive, the canonical form is
+// lowercase and documents that specify schemes must do so with lowercase letters.
+// The scheme name is followed by a colon (":").
+var hasSchemeRegex = /^([a-zA-Z0-9+.-]+:|#).+/;
 
 module.exports = function linkscheme_plugin(md, scheme) {
   var oldLinkOpenOverride = md.renderer.rules.link_open;

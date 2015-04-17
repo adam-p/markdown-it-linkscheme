@@ -41,6 +41,11 @@ describe('markdown-it-linkscheme', function () {
     target = '<p><a href="other:/link">name</a></p>\n';
     expect(md.render(s)).to.equal(target);
 
+    // No forward slash -- like mailto:
+    s = '[name](mailto:me@example.com)';
+    target = '<p><a href="mailto:me@example.com">name</a></p>\n';
+    expect(md.render(s)).to.equal(target);
+
     // Angle bracket form
     s = '<http://example.com>';
     target = '<p><a href="http://example.com">http://example.com</a></p>\n';
